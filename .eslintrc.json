@@ -1,0 +1,81 @@
+{
+  "env": {
+    "browser": true,
+    "es2022": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "rules": {
+    "strict": ["error", "global"],
+    "semi": "error",
+    "array-callback-return": "error",
+    "no-constant-binary-expression": "error",
+    "no-constructor-return": "error",
+    "no-duplicate-imports": "error",
+    "no-promise-executor-return": "error",
+    "no-self-compare": "error",
+    "no-template-curly-in-string": "error",
+    "no-unreachable-loop": "error",
+    "no-unused-private-class-members": "error",
+    "require-atomic-updates": "error",
+    "no-unmodified-loop-condition": "warn",
+    "camelcase": "warn",
+    "consistent-return": "warn",
+    "curly": ["warn", "multi-line"],
+    "default-param-last": "warn",
+    //"eqeqeq": "warn",
+    "no-else-return": "warn",
+    "no-eval": "error",
+    "no-implicit-coercion": "warn",
+    "no-implied-eval": "error",
+    "no-invalid-this": "error",
+    "no-lonely-if": "warn",
+    "no-mixed-operators": "warn",
+    "no-return-assign": "error",
+    "no-restricted-properties": [
+      "error",
+      {
+        "property": "lenght",
+        "message": "Did you mean 'length'?"
+      }
+    ],
+    "no-shadow": "warn",
+    "no-undefined": "error",
+    "no-unneeded-ternary": "warn",
+    //"no-unused-expressions": "warn",
+    "no-useless-return": "warn",
+    "no-var": "warn",
+    "no-void": "error",
+    "no-warning-comments": "warn",
+    "prefer-const": "warn",
+    "prefer-exponentiation-operator": "warn",
+    "prefer-rest-params": "warn",
+    "prefer-spread": "warn",
+    //"prefer-template": "warn",
+    "require-await": "warn",
+    "yoda": "warn",
+    "arrow-parens": "warn",
+    //"brace-style": "warn",
+    //"comma-dangle": ["warn", "always-multiline"],
+    //"comma-spacing": "warn",
+    "comma-style": "warn",
+    "eol-last": "warn",
+    //"indent": ["warn", 2],
+    //"keyword-spacing": "warn",
+    /*"max-len": ["warn",    {
+      "ignoreComments": true,
+      "ignoreUrls": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreRegExpLiterals": true
+    }],*/
+    "no-trailing-spaces": "warn",
+    //"quotes": ["warn", "single"],
+    //"space-infix-ops": "warn",
+    "space-unary-ops": "warn"
+  }
+}
