@@ -2,7 +2,7 @@
 
 ## Install & run
 
-- run from the rood directory
+- run from the root directory
 - npm i
 - npm run dev
 
