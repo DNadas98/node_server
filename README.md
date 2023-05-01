@@ -6,7 +6,7 @@ https://github.com/DNadas98/node_server
 
 - run from the root directory
 - npm i
-- npm run dev
+- node backend/server.js or npm run dev
 
 ## File structure
 
