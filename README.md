@@ -25,6 +25,6 @@ https://github.com/DNadas98/node_server
 
 ## Frontend references
 
-- .html files: path relative to root/frontend/views
-- other static files: path relative to root/frontend/public
+- HTML files: path relative to root/frontend/views
+- Other static files: path relative to root/frontend/public
 - For example `<link rel="stylesheet" href="/css/myStyle.css">` will point to root/frontend/public/css/myStyle.css
