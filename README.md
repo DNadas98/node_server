@@ -28,7 +28,7 @@ https://github.com/DNadas98/node_server
 - To remove this, comment out the following line in backend/server.js:
   ```js
   filteredUrl = req.url.replace(`?${queryString}`, '');
-  ``
+  ```
 
 ## Frontend references
 
