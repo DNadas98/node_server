@@ -70,16 +70,33 @@ const server = http.createServer((req, res) => {
       contentType = 'text/html';
   }
 
+  //Filter out all queries
+  const firstQueryStartIndex = req.url.indexOf('?');
+  const anchorIndex = req.url.indexOf('#');
+  let queryString = '';
+  let filteredUrl = req.url;
+  if (firstQueryStartIndex !== -1) {
+    if (anchorIndex === -1 || (anchorIndex !== -1 && anchorIndex < firstQueryStartIndex)) {
+      //no # or # before first ?
+      queryString = req.url.split('?')[1];
+    } else {
+      //# after first ?
+      queryString = req.url.split('#')[1].split('?')[1];
+    }
+  }
+  //Comment next line out to remove query filter
+  filteredUrl = req.url.replace(`?${queryString}`, '');
+
   //Set path
   let filePath =
-    contentType === 'text/html' && req.url === '/'
+    contentType === 'text/html' && filteredUrl === '/'
       ? path.join(__dirname, '..', 'frontend', 'views', 'index.html')
-      : contentType === 'text/html' && req.url.slice(-1) === '/'
-      ? path.join(__dirname, '..', 'frontend', 'views', req.url, 'index.html')
+      : contentType === 'text/html' && filteredUrl.slice(-1) === '/'
+      ? path.join(__dirname, '..', 'frontend', 'views', filteredUrl, 'index.html')
       : contentType === 'text/html'
-      ? path.join(__dirname, '..', 'frontend', 'views', req.url)
-      : path.join(__dirname, '..', 'frontend', 'public', req.url);
-  if (!extension && req.url.slice(-1) !== '/') filePath += '.html';
+      ? path.join(__dirname, '..', 'frontend', 'views', filteredUrl)
+      : path.join(__dirname, '..', 'frontend', 'public', filteredUrl);
+  if (!extension && filteredUrl.slice(-1) !== '/') filePath += '.html';
 
   //Serve if the file exists
   const fileExists = fs.existsSync(filePath);
