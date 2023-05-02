@@ -23,6 +23,13 @@ https://github.com/DNadas98/node_server
   - views
     - subdir
 
+## Query filtering
+- By default all queries are removed from the request url.
+- To remove this, comment out the following line in backend/server.js:
+  ```js
+  filteredUrl = req.url.replace(`?${queryString}`, '');
+  ``
+
 ## Frontend references
 
 - HTML files: path relative to root/frontend/views
