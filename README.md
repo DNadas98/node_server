@@ -23,6 +23,9 @@ https://github.com/DNadas98/node_server
   - views
     - subdir
 
+## Default port
+- The default port is 3000, to change it, search for PORT in backend/server.js
+
 ## Query filtering
 - By default all queries are removed from the request url.
 - To remove this, comment out the following line in backend/server.js:
