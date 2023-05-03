@@ -101,11 +101,13 @@ const server = http.createServer((req, res) => {
   //Serve if the file exists
   const fileExists = fs.existsSync(filePath);
   if (fileExists) {
+    myEmitter.emit('log', `${filePath}\t${contentType}`, 'servedLog.txt');
     serveFile(filePath, contentType, res);
   } else {
     //Redirects: 301 (Moved Permanently), 404 (Not Found)
     switch (path.parse(filePath).base) {
       case 'oldpage.html':
+        myEmitter.emit('log', `${filePath}\tredirect to /index.html`, 'servedLog.txt');
         res.writeHead(301, { 'Location': '/index.html' });
         res.end();
         break;
