@@ -91,7 +91,9 @@ const server = http.createServer((req, res) => {
   //Remove request body and clear out cookies - we don't need those to serve static files
   req.body = {};
   delete req.headers.cookie;
-  req.headers.Cookie = '';
+  delete req.headers.referer;
+  delete req.headers.host;
+  delete req.headers.authorization;
 
   //Set path
   let filePath =
