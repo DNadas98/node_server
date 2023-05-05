@@ -31,7 +31,7 @@ https://github.com/DNadas98/node_server
 ## Filtering
 - By default all queries are removed from the request url
 - The request body is cleared (`req.body={}`)
-- The cookies are removed from the request header
+- Cookie and other unneeded headers are deleted from the request header
 - To remove or modify these, see backend/server.js
 
 ## Frontend references
