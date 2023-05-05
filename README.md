@@ -1,6 +1,8 @@
 # My minimal Node.js server
-
 https://github.com/DNadas98/node_server
+- The server serves only existing static files from the views or public folder
+- Only GET requests are handled
+- Ideal for simple frontend projects
 
 ## Install & run
 
@@ -26,12 +28,11 @@ https://github.com/DNadas98/node_server
 ## Default port
 - The default port is 3000, to change it, search for PORT in backend/server.js
 
-## Query filtering
-- By default all queries are removed from the request url.
-- To remove this, comment out the following line in backend/server.js:
-  ```js
-  filteredUrl = req.url.replace(`?${queryString}`, '');
-  ```
+## Filtering
+- By default all queries are removed from the request url
+- The request body is cleared (`req.body={}`)
+- The cookies are removed from the request header
+- To remove or modify these, see backend/server.js
 
 ## Frontend references
 
