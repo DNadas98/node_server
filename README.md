@@ -28,7 +28,7 @@ https://github.com/DNadas98/node_server
 ## Default port
 - The default port is 3000, to change it, search for PORT in backend/server.js
 
-## Filtering
+## Request filtering
 - By default all queries are removed from the request url
 - The request body is cleared (`req.body={}`)
 - Cookie and other unneeded headers are deleted from the request header
