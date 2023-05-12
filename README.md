@@ -22,6 +22,7 @@ https://github.com/DNadas98/node_server
     - data
     - img
     - js
+    - video
   - views
 
 ## Default port
