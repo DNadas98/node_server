@@ -14,7 +14,7 @@ myEmitter.on('log', (msg, fileName) => logEvents(msg, fileName));
 //Serve static files
 const serveFile = async (filePath, contentType, res) => {
   try {
-    const fileEncoding = contentType.includes('image')||contentType.includes('video') ? '' : 'utf8';
+    const fileEncoding = contentType.includes('image') || contentType.includes('video') ? '' : 'utf8';
     const rawData = await fsPromises.readFile(filePath, fileEncoding);
     const data = contentType === 'application/json' ? JSON.parse(rawData) : rawData;
 
@@ -59,8 +59,10 @@ const server = http.createServer((req, res) => {
       break;
     case '.gif':
       contentType = 'image/gif';
+      break;
     case '.mp4':
       contentType = 'video/mp4';
+      break;
     case '.flv':
       contentType = 'video/x-flv';
       break;
@@ -90,7 +92,7 @@ const server = http.createServer((req, res) => {
   }
   //Comment next line out to remove query filter
   filteredUrl = req.url.replace(`?${queryString}`, '');
-    
+
   //Remove request body and clear out some headers - not needed to serve static files
   req.body = {};
   delete req.headers.cookie;
