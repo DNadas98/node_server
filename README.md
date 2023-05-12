@@ -10,7 +10,7 @@ https://github.com/DNadas98/node_server
 - run from the root directory
 - node backend/server.js or npm run dev
 
-## File structure
+## Folder structure
 
 - backend
   - server.js
