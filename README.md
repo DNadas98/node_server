@@ -23,7 +23,6 @@ https://github.com/DNadas98/node_server
     - img
     - js
   - views
-    - subdir
 
 ## Default port
 - The default port is 3000, to change it, search for PORT in backend/server.js
