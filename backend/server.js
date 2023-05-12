@@ -14,7 +14,7 @@ myEmitter.on('log', (msg, fileName) => logEvents(msg, fileName));
 //Serve static files
 const serveFile = async (filePath, contentType, res) => {
   try {
-    const fileEncoding = contentType.includes('image') ? '' : 'utf8';
+    const fileEncoding = contentType.includes('image')||contentType.includes('video') ? '' : 'utf8';
     const rawData = await fsPromises.readFile(filePath, fileEncoding);
     const data = contentType === 'application/json' ? JSON.parse(rawData) : rawData;
 
@@ -59,6 +59,10 @@ const server = http.createServer((req, res) => {
       break;
     case '.gif':
       contentType = 'image/gif';
+    case '.mp4':
+      contentType = 'video/mp4';
+    case '.flv':
+      contentType = 'video/x-flv';
       break;
     case '.ico':
       contentType = 'image/x-icon';
