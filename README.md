@@ -1,5 +1,4 @@
 # My minimal Node.js server
-https://github.com/DNadas98/node_server
 - The server serves only existing static files from the views or public folder
 - Only GET requests are handled
 - Ideal for simple frontend projects
