@@ -1,4 +1,5 @@
 # My minimal Node.js server
+This project was my preparation for the web module after I have finished the programming basics module of my coding bootcamp. The simple no-framework server allowed me to learn the basic concepts and implement their logic with the least possible amount of abstraction in this environment.
 - The server serves only existing static files from the views or public folder
 - Only GET requests are handled
 - Ideal for simple frontend projects
