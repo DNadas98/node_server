@@ -28,12 +28,6 @@ This project was my preparation for the web module after I have finished the pro
 ## Default port
 - The default port is 3000, to change it, search for PORT in backend/server.js
 
-## Request filtering
-- By default all queries are removed from the request url
-- The request body is cleared
-- Cookie and other unneeded headers are deleted from the request header
-- To remove or modify these, see backend/server.js
-
 ## Frontend references
 
 - HTML files: path relative to root/frontend/views
