@@ -93,13 +93,6 @@ const server = http.createServer((req, res) => {
   //Comment next line out to remove query filter
   filteredUrl = req.url.replace(`?${queryString}`, '');
 
-  //Remove request body and clear out some headers - not needed to serve static files
-  req.body = {};
-  delete req.headers.cookie;
-  delete req.headers.referer;
-  delete req.headers.host;
-  delete req.headers.authorization;
-
   //Set path
   let filePath =
     contentType === 'text/html' && filteredUrl === '/'
